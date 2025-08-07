@@ -7,7 +7,7 @@ import UserIcon from './UserIcon';
 import { HiBars3CenterLeft } from "react-icons/hi2";
 import { handleOpenMobileNav } from '../features/fetchSlice';
 import { toast } from 'react-toastify';
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo-full.png";
 
 const Navbar = () => {
 
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className='fixed top-0 left-0 z-40 bg-white w-full h-20 shadow-md flex items-center justify-between px-5 md:px-30'>
-      <Link to={"/"} className='text-3xl md:text-4xl font-semibold flex items-center gap-1'><img src={Logo} alt="logo-picture" className='w-20'/> Yumline</Link>
+      <Link to={"/"}><img src={Logo} alt="logo-picture" className='w-58'/></Link>
 
       <div className='flex items-center justify-center gap-10'>
 
