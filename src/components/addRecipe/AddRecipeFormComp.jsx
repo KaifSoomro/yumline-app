@@ -3,6 +3,9 @@ import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import {addRecipeData} from "../../features/recipesSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddRecipeFormComp = () => {
 
@@ -14,8 +17,8 @@ const AddRecipeFormComp = () => {
   const [isLoading,setIsLoading] = useState(false);
   const [uploadDone,setUploadDone] = useState(false);
 
-
-  const isDisabled = imageURL ? false : true;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFileUpload = async(setFieldValue) => {
     if(!fileSelect) return alert("Please select image first")
@@ -70,7 +73,7 @@ const AddRecipeFormComp = () => {
     prepTime: Yup.number().required("What's the preparation time for this dish."),
     cookTime: Yup.number().required("Total time for this dish."),
     ingredients: Yup.string().required("Ingredients of this dish"),
-    smallDesc: Yup.string().required("Small description").max(30, "Maximum 30 words are allowed"),
+    smallDesc: Yup.string().required("Small description"),
     fullDesc: Yup.string().required("A great full description, how we can cook this.")
   })
 
@@ -82,7 +85,8 @@ const AddRecipeFormComp = () => {
               initialValues={initialValues}
               validationSchema={validationSchema}
               onSubmit={(values) => {
-                console.log(values)
+                 dispatch(addRecipeData(values))
+                 navigate("/recipes")
               }}
             >
 

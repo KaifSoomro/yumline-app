@@ -16,7 +16,7 @@ const RecipesFetchComp = () => {
         return <LoadingComp />
     }
   return (
-    <div className='w-full h-full grid grid-cols-4'>
+    <div className='w-full h-full grid grid-cols-4 px-40'>
         { 
           allRecipesData?.map((values) => (
             <RecipeCardComp values={values}/>
