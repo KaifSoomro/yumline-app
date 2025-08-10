@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const fetchSlice = createSlice({
     name:"fetch",
     initialState: {
-        mobileNav: false
+        mobileNav: false,
     },
     reducers: {
-        handleOpenMobileNav: ( state, action ) => {
+        handleOpenMobileNav: ( state ) => {
             state.mobileNav = true;
         },
-        handleCloseMobileNav: ( state, action ) => {
+        handleCloseMobileNav: ( state ) => {
             state.mobileNav = false;
         }
     }

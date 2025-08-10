@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoadingComp from "../LoadingComp";
 import { getAllRecipes } from '../../features/recipesSlice.js';
 
-const RecipesFetchComp = () => {
+const RecipesFetchComp = ({ filterData }) => {
   const dispatch = useDispatch();
-    const { allRecipesData, isLoading } = useSelector(state => state.recipes);
+    const { isLoading } = useSelector(state => state.recipes);
 
     useEffect(() => {
       dispatch(getAllRecipes());
@@ -18,7 +18,7 @@ const RecipesFetchComp = () => {
   return (
     <div className='w-full h-full grid grid-cols-4 px-40'>
         { 
-          allRecipesData?.map((values) => (
+          filterData?.map((values) => (
             <RecipeCardComp values={values}/>
           ))
         }
