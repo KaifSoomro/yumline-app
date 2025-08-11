@@ -22,8 +22,8 @@ const Navbar = () => {
   }; 
 
   return (
-    <nav className='fixed top-0 left-0 z-40 bg-white w-full h-20 shadow-md flex items-center justify-between px-5 md:px-30'>
-      <Link to={"/"}><img src={Logo} alt="logo-picture" className='w-58'/></Link>
+    <nav className='fixed top-0 left-0 z-40 bg-white w-full h-16 md:h-20 shadow-md flex items-center justify-between px-5 md:px-30'>
+      <Link to={"/"}><img src={Logo} alt="logo-picture" className='md:w-58 w-40'/></Link>
 
       <div className='flex items-center justify-center gap-10'>
 
@@ -34,10 +34,6 @@ const Navbar = () => {
 
           <NavLink onClick={()=> token ? "" : toast.error("Sign in/Login first to visit recipes page")} to={"/recipes"} className={({isActive}) => `${ isActive ? "text-black font-semibold" : "text-neutral-500 font-semibold" }`}>
             Recipes
-          </NavLink>
-
-          <NavLink to={"/contact"} className={({isActive}) => `${ isActive ? "text-black font-semibold" : "text-neutral-500 font-semibold" }`}>
-            Contact
           </NavLink>
 
           <NavLink to={"/about"} className={({isActive}) => `${ isActive ? "text-black font-semibold" : "text-neutral-500 font-semibold" }`}>

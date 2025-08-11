@@ -38,10 +38,6 @@ const MobileNavBarComp = () => {
             Recipes
           </NavLink>
 
-          <NavLink onClick={() => dispatch(handleCloseMobileNav())} to={"/contact"} className={({isActive}) => `${ isActive ? "text-black font-semibold" : "text-neutral-500 font-semibold" }`}>
-            Contact
-          </NavLink>
-
           <NavLink onClick={() => dispatch(handleCloseMobileNav())} to={"/about"} className={({isActive}) => `${ isActive ? "text-black font-semibold" : "text-neutral-500 font-semibold" }`}>
             About Us
           </NavLink>

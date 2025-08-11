@@ -10,7 +10,7 @@ const Footer = () => {
     <div className='w-full h-[350px] mt-20 md:mt-40 bg-neutral-900 text-white flex items-center justify-center md:px-0 px-5'>
        <div className='w-[500px] text-center flex items-center justify-center flex-col'>
           
-          <Link to={"/"}><img src={Logo} alt="logo-picture" className='w-70'/></Link>
+          <Link to={"/"}><img src={Logo} alt="logo-picture" className='w-58 md:w-70'/></Link>
           <p className='text-sm md:text-lg mt-8'>Explore thousands of easy-to-follow recipes from around the world. Save favorites, create shopping lists, and get daily cooking inspiration—all in one app.</p>
           
           <div className='flex items-center justify-center gap-5 mt-5 text-4xl'>

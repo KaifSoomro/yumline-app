@@ -2,13 +2,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa6";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleCloseMobileNav } from '../features/fetchSlice';
 
 export default function UserIcon() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+   const dispatch = useDispatch();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -40,6 +43,7 @@ export default function UserIcon() {
         <div className="absolute md:right-0 left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
           <Link
             to="/profile"
+            onClick={() => dispatch(handleCloseMobileNav())}
             className="block px-4 py-2 text-gray-700 hover:bg-neutral-100"
           >
             Profile
@@ -47,6 +51,7 @@ export default function UserIcon() {
          {
             token ?  <Link
             to="/my-recipes"
+            onClick={() => dispatch(handleCloseMobileNav())}
             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
           >
             My Recipes

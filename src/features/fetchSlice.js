@@ -4,6 +4,7 @@ const fetchSlice = createSlice({
     name:"fetch",
     initialState: {
         mobileNav: false,
+        categorie: "",
     },
     reducers: {
         handleOpenMobileNav: ( state ) => {
@@ -11,10 +12,13 @@ const fetchSlice = createSlice({
         },
         handleCloseMobileNav: ( state ) => {
             state.mobileNav = false;
+        },
+        handleCategorie: ( state, action ) => {
+            state.categorie = action.payload;
         }
     }
 })
 
-export const { handleOpenMobileNav, handleCloseMobileNav } = fetchSlice.actions;
+export const { handleOpenMobileNav, handleCloseMobileNav, handleCategorie } = fetchSlice.actions;
 export default fetchSlice.reducer;
 

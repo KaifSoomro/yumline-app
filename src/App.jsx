@@ -3,7 +3,6 @@ import {Routes, Route, useLocation} from "react-router-dom";
 import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 import RecipesPage from "./pages/RecipesPage";
-import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import LoginPage from "./pages/LoginPage";
@@ -41,11 +40,11 @@ const App = () => {
                <Route path='/my-recipes' element={<UserRecipesPage />}/>
             </Route>
             <Route path='/' element={<HomePage />}/>
-            <Route path='/contact' element={<ContactPage />}/>
             <Route path='/about' element={<AboutPage />}/>
             <Route path='/recipes/:recipeId' element={<RecipeDetailPage />}/>
             <Route path='/register' element={<RegistrationPage />}/>
             <Route path='/login' element={<LoginPage />}/>
+            <Route path='*' element={<NotFound />}/>
         </Routes>
         { !hideFooter && <Footer /> }
         <ToastContainer />
