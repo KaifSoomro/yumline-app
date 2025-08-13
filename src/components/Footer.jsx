@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { PiHamburgerFill } from "react-icons/pi";
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import Logo from "../assets/logo-black-full.png";
 
 const Footer = () => {
   return (
-    <div className='w-full h-[350px] mt-20 md:mt-40 bg-neutral-900 text-white flex items-center justify-center md:px-0 px-5'>
+    <div className='w-full h-[350px] mt-30 bg-neutral-900 text-white flex items-center justify-center md:px-0 px-5'>
        <div className='w-[500px] text-center flex items-center justify-center flex-col'>
           
           <Link to={"/"}><img src={Logo} alt="logo-picture" className='w-58 md:w-70'/></Link>

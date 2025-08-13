@@ -3,10 +3,14 @@ import { HiClock } from "react-icons/hi";
 import { TbToolsKitchen2 } from "react-icons/tb";
 import { GoHeartFill } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const RecipeCardComp = ({ values }) => {
+    
+    const { token } = useSelector(state => state.auth);
+
   return (
-    <Link to={`/recipes/${values?._id}`} className='relative w-[300px] h-[300px] hover:scale-103 cursor-pointer transition-all mx-auto flex flex-col bg-gradient-to-t from-cyan-100 to-transparent rounded-2xl mt-10 p-2 overflow-hidden'>
+    <Link to={ token ? `/recipes/${values?._id}` : "/login" } className='relative w-[300px] h-[300px] hover:scale-103 cursor-pointer transition-all mx-auto flex flex-col bg-gradient-to-t from-cyan-100 to-transparent rounded-2xl mt-10 p-2 overflow-hidden'>
         <button className='absolute top-3 right-3 cursor-pointer active:scale-95 flex items-center justify-center text-lg w-10 h-10 rounded-full bg-white shadow'>
             <GoHeartFill className='text-neutral-500'/>
         </button>

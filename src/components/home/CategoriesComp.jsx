@@ -54,7 +54,7 @@ const CategoriesComp = () => {
   return (
     <>
         <div className='w-full flex items-center justify-between px-5 md:px-50'>
-            <h1 className='mb-12 mt-15 text-3xl md:text-4xl text-neutral-900 font-semibold'>Categories</h1>
+            <h1 className='mb-13 md:mb-20 mt-15 text-3xl md:text-4xl text-neutral-900 font-semibold'>Categories</h1>
         </div>
 
         <div className='w-full md:h-40 grid grid-cols-2 md:flex md:items-center md:justify-center md:gap-30 gap-5 md:px-0 px-5'>

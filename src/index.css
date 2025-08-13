@@ -13,3 +13,15 @@ body {
 .header-name {
     font-family: "Lilita One", sans-serif;
 }
+
+.spin {
+    animation: spin infinite 50s;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
